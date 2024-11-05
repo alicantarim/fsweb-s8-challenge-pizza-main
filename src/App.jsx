@@ -2,6 +2,7 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import workintech from "/workintech.svg";
 import "./App.css";
+import Extra from "./Extra";
 
 const init = [{ name: "İnce" }, { name: "Normal" }, { name: "Kalın" }];
 
@@ -184,7 +185,7 @@ function App() {
             <p className="p-long">En fazla 10 mazleme seçebilirsiniz. 5TL</p>
             <div>
               {extras.map((extra, ind) => (
-                <extra
+                <Extra
                   key={ind}
                   onChange={handleChange}
                   checked={formData.malzemeler.includes(extra.value)}
