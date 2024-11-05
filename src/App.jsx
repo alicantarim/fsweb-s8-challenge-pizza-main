@@ -64,6 +64,13 @@ const extras = [
   },
 ];
 
+const initialData = {
+  isim: "string",
+  boyut: "string",
+  malzemeler: [],
+  özel: "string",
+};
+
 function App() {
   const [formData, setFormData] = useState(initialData);
 
@@ -100,7 +107,7 @@ function App() {
 
       <main>
         {/* FOOD DETAIL SECTION START */}
-        <div className="container-lg">
+        <div className="container-lg extra">
           <h2>Position Absolute Acı Pizza</h2>
           <div className="food-rank-price">
             <h3>85.50₺</h3>
@@ -142,6 +149,9 @@ function App() {
                 Büyük
               </label>
             </div>
+            {/* ORDER SIZE SECTION END */}
+
+            {/* ORDER DOUGH TYPE SECTION START */}
             <div className="chooseDoughType flex column">
               <label
                 htmlFor="dough"
@@ -166,8 +176,25 @@ function App() {
                 <option value="kalin">Kalın</option>
               </select>
             </div>
+            {/* ORDER DOUGH TYPE SECTION END */}
           </div>
-          {/* ORDER SIZE SECTION START */}
+          {/* EXTRA MATERIALS  SECTION START */}
+          <div className="extra-materials container-lg">
+            <h2>Ek Malzemeler</h2>
+            <p className="p-long">En fazla 10 mazleme seçebilirsiniz. 5TL</p>
+            <div>
+              {extras.map((extra, ind) => (
+                <extra
+                  key={ind}
+                  onChange={handleChange}
+                  checked={formData.malzemeler.includes(extra.value)}
+                  name="malzemeler"
+                  value={extra.value}
+                  label={extra.label}
+                />
+              ))}
+            </div>
+          </div>
         </div>
       </main>
     </div>

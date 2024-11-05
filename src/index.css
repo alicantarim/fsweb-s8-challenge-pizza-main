@@ -94,6 +94,15 @@ h1 {
   max-width: 900px;
 }
 
+.extra-css {
+  display: flex;
+  max-width: 500px;
+  margin: 0 auto;
+  gap: 10px;
+  flex-direction: column;
+  padding-top: 40px;
+}
+
 /* SS */
 
 button {
