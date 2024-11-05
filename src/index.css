@@ -3,9 +3,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow:wght@300..700&display=swap");
 
 :root {
-  * {
+  /* * {
     border: 1px solid lime;
-  }
+  } */
 
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -57,9 +57,15 @@ h1 {
   margin: 2rem 0;
 }
 
+.header-content {
+  background-color: var(--color-red);
+  min-width: 60vh;
+  padding-bottom: 1.3rem;
+}
+
 .header-content p {
   margin: 0 auto;
-  max-width: 900px;
+  max-width: 700px;
   color: var(--color-white);
   text-align: start;
 }
@@ -67,12 +73,6 @@ h1 {
 .container-lg {
   padding-top: 1.3rem;
   text-align: start;
-}
-
-.header-content {
-  background-color: var(--color-red);
-  min-width: 100vh;
-  padding-bottom: 1.3rem;
 }
 
 .food-rank-price {
@@ -91,12 +91,12 @@ h1 {
 .input-group-dough {
   font-family: "Barlow";
   margin: 0 auto;
-  max-width: 900px;
+  max-width: 700px;
 }
 
 .extra-css {
   display: flex;
-  max-width: 500px;
+  max-width: 700px;
   margin: 0 auto;
   gap: 10px;
   flex-direction: column;
@@ -133,7 +133,7 @@ button:focus-visible {
 
 .App {
   min-height: 100vh;
-  min-width: 1000px;
+  min-width: 800px;
 }
 
 .container-s {
@@ -143,13 +143,12 @@ button:focus-visible {
 
 .container-lg {
   margin: 0 auto;
-  max-width: 900px;
+  max-width: 700px;
 }
 
 .food-description {
-  max-width: 900px;
-  text-align: start;
-  padding-left: 3rem;
+  max-width: 700px;
+  padding-bottom: 3rem;
 }
 
 .chooseSize {

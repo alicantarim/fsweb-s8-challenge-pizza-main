@@ -2,7 +2,7 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import workintech from "/workintech.svg";
 import "./App.css";
-import Extra from "./Extra";
+// import Extra from "./Extra";
 
 const init = [{ name: "İnce" }, { name: "Normal" }, { name: "Kalın" }];
 
@@ -179,13 +179,14 @@ function App() {
             </div>
             {/* ORDER DOUGH TYPE SECTION END */}
           </div>
+
           {/* EXTRA MATERIALS  SECTION START */}
           <div className="extra-materials container-lg">
-            <h2>Ek Malzemeler</h2>
+            <h2 className="padding-topbottom">Ek Malzemeler</h2>
             <p className="p-long">En fazla 10 mazleme seçebilirsiniz. 5TL</p>
             <div>
               {extras.map((extra, ind) => (
-                <Extra
+                <extra
                   key={ind}
                   onChange={handleChange}
                   checked={formData.malzemeler.includes(extra.value)}
@@ -196,6 +197,7 @@ function App() {
               ))}
             </div>
           </div>
+          {/* EXTRA MATERIALS SECTION END */}
         </div>
       </main>
     </div>
