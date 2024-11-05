@@ -8,7 +8,9 @@ function App() {
 
   return (
     <div className="App">
-      <header></header>
+      <header>
+        <div className="container-lg">Tenknoloji Yemekler</div>
+      </header>
     </div>
   );
 }
