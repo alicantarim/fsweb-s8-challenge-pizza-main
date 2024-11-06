@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 
-import "../index.css";
-
 function Extra({ onChange, checked, name, value, label }) {
   return (
     <>

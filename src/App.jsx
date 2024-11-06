@@ -1,8 +1,7 @@
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import workintech from "/workintech.svg";
-import "./App.css";
-// import Extra from "./Extra";
+import Extra from "./Extra";
 
 const init = [{ name: "İnce" }, { name: "Normal" }, { name: "Kalın" }];
 
@@ -127,12 +126,11 @@ function App() {
             </p>
           </div>
         </div>
-
         {/* FOOD DETAIL SECTION STOP */}
 
         <div className="">
           {/* ORDER SIZE SECTION START */}
-          <div className="input-group-dough flex gap-l">
+          <div className="input-group-dough flex gap-l between">
             <div className="chooseSize flex column ">
               <label className="font-size-l padding-topbottom">
                 <strong>Boyut Seç *</strong>
@@ -170,7 +168,7 @@ function App() {
                 onChange={handleChange}
               >
                 <option value="-1" disabled={true}>
-                  Hamur Kalınlığı
+                  Hamur Kalınlığı Seçiniz
                 </option>
                 <option value="ince">İnce</option>
                 <option value="normal">Normal</option>
@@ -180,13 +178,13 @@ function App() {
             {/* ORDER DOUGH TYPE SECTION END */}
           </div>
 
-          {/* EXTRA MATERIALS SECTION START */}
+          {/* EXTRA MATERIALS  SECTION START */}
           <div className="extra-materials container-lg">
             <h2 className="padding-topbottom">Ek Malzemeler</h2>
-            <p className="p-long">En fazla 10 mazleme seçebilirsiniz. 5TL</p>
+            <p className="p-long">En fazla 10 mazleme seçebilirsiniz. 5 TL</p>
             <div>
               {extras.map((extra, ind) => (
-                <extra
+                <Extra
                   key={ind}
                   onChange={handleChange}
                   checked={formData.malzemeler.includes(extra.value)}
@@ -197,7 +195,29 @@ function App() {
               ))}
             </div>
           </div>
-          {/* EXTRA MATERIALS SECTION END */}
+          {/* EXTRA MATERIALS  SECTION END */}
+        </div>
+
+        {/* ADD NOTES SECTION END */}
+        <div className="note-and-order-summary text-start">
+          <div className="add-notes">
+            <h2>Sipariş Notu</h2>
+            <textarea
+              name="note"
+              id="note"
+              placeholder="Siparişinize eklemek istediğiniz bir not var mı?"
+            ></textarea>
+          </div>
+          {/* <div className="bootom-site">
+          <div className="quantity-select">
+            <button className="decrement btn" onClick={onDecrement}>
+              -
+            </button>
+            <button className="increment btn" onClick={onIncrement}>
+              +
+            </button>
+          </div>
+        </div> */}
         </div>
       </main>
     </div>

@@ -3,9 +3,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow:wght@300..700&display=swap");
 
 #root {
-  /* * {
+  * {
     border: 1px solid lime;
-  } */
+  }
+
   margin: 0 auto;
   text-align: center;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -30,7 +31,23 @@
 
   --gap-s: 0.75rem;
   --gap-m: 1.5rem;
-  --gap-l: 16rem;
+  --gap-l: 2rem;
+}
+
+.content-container {
+  /* 22 */
+  max-width: 530px;
+  margin: 0 auto;
+}
+
+.header {
+  background-color: red;
+  padding: 1.5rem 0;
+}
+
+.header img {
+  display: block;
+  margin: 1rem auto;
 }
 
 a {
@@ -92,7 +109,13 @@ h1 {
 .input-group-dough {
   font-family: "Barlow";
   margin: 0 auto;
-  max-width: 700px;
+  max-width: 500px;
+}
+
+.note-and-order-summary {
+  font-family: "Barlow";
+  margin: 0 auto;
+  max-width: 500px;
 }
 
 .extra-css {
@@ -106,7 +129,7 @@ h1 {
 
 /* SS */
 
-button {
+/* button {
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
@@ -123,7 +146,7 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
-}
+} */
 
 /* SS */
 
@@ -144,11 +167,11 @@ button:focus-visible {
 
 .container-lg {
   margin: 0 auto;
-  max-width: 700px;
+  max-width: 500px;
 }
 
 .food-description {
-  max-width: 700px;
+  max-width: 500px;
   padding-bottom: 3rem;
 }
 
