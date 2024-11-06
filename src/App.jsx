@@ -180,7 +180,7 @@ function App() {
             {/* ORDER DOUGH TYPE SECTION END */}
           </div>
 
-          {/* EXTRA MATERIALS  SECTION START */}
+          {/* EXTRA MATERIALS SECTION START */}
           <div className="extra-materials container-lg">
             <h2 className="padding-topbottom">Ek Malzemeler</h2>
             <p className="p-long">En fazla 10 mazleme seçebilirsiniz. 5TL</p>
