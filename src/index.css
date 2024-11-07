@@ -50,6 +50,17 @@
   margin: 1rem auto;
 }
 
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 200px);
+  justify-content: start;
+}
+
+.grid-item {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -91,6 +102,7 @@ h1 {
 .container-lg {
   padding-top: 1.3rem;
   text-align: start;
+  borderradius: "5px";
 }
 
 .food-rank-price {
@@ -167,11 +179,10 @@ button:focus-visible {
 
 .container-lg {
   margin: 0 auto;
-  max-width: 500px;
+  max-width: 645px;
 }
 
 .food-description {
-  max-width: 500px;
   padding-bottom: 3rem;
 }
 
@@ -192,10 +203,6 @@ button:focus-visible {
   font-size: large;
 }
 
-.padding-topbottom {
-  padding: 0.5rem 0;
-}
-
 .padding-left {
   padding-left: 1rem;
 }
@@ -213,6 +220,10 @@ button:focus-visible {
   justify-content: center;
 }
 
+.justify-content {
+  justify-content: space-between;
+}
+
 .align-center {
   align-items: center;
 }
@@ -227,6 +238,18 @@ button:focus-visible {
 
 .between {
   justify-content: space-between;
+}
+
+.margin-bottom {
+  margin-bottom: 1rem;
+}
+
+.margin-bottom-lg {
+  margin-bottom: 2rem;
+}
+
+.font-weight {
+  font-weight: 500;
 }
 
 .gap-s {
@@ -247,4 +270,8 @@ button:focus-visible {
 
 .text-start {
   text-align: start;
+}
+
+.max-width-500 {
+  max-width: 500px;
 }
