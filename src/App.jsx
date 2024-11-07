@@ -71,17 +71,19 @@ function App() {
   // UI SCREEN SECTION START HERE
   return (
     <div className="App">
-      <header>
+      <header className="">
         <div className="header-content">
           <h1>Tenknoloji Yemekler</h1>
-          <p>
-            Anasayfa - Seçenekler - <strong>Sipariş Oluştur</strong>
-          </p>
+          <div className="container-lg">
+            <p>
+              Anasayfa - Seçenekler - <strong>Sipariş Oluştur</strong>
+            </p>
+          </div>
         </div>
       </header>
       {/* HEADER END */}
 
-      <main>
+      <main className="bg-secondary">
         {/* FOOD DETAIL SECTION START */}
         <div className="container-lg extra">
           <h2>Position Absolute Acı Pizza</h2>
@@ -182,10 +184,11 @@ function App() {
         {/* ADD NOTES START */}
         {/* <div className="note-and-order-summary text-start"> */}
         <div className="container-lg flex column margin-bottom-lg">
-          <label htmlFor="order-note">
+          <label htmlFor="order-note" className="margin-bottom">
             <h2>Sipariş Notu</h2>
           </label>
           <textarea
+            style={{ minWidth: "650px" }}
             name="order-note"
             id="order-note"
             placeholder="Siparişinize eklemek istediğiniz bir not var mı?"
@@ -195,33 +198,40 @@ function App() {
         </div>
         {/* ADD NOTES END */}
 
+        <hr className="margin-bottom-lg container-lg" />
+
         {/* QUANTITY SELECTION START */}
-        <div className="bottom-site">
-          <div className="quantity-select">
-            <button className="decrement btn" onClick={decrement}>
+        <div className="flex between container-lg">
+          <div className="quantity-select button-div">
+            <button className="decrement button" onClick={decrement}>
               -
             </button>
             <div className="counter">{count}</div>
-            <button className="increment btn" onClick={increment}>
+            <button className="increment button" onClick={increment}>
               +
             </button>
           </div>
-        </div>
-        {/* QUANTITY SELECTION END */}
+          {/* QUANTITY SELECTION END */}
 
-        <div className="order-summary-container">
-          <div className="order summary">
-            <h3>Sipariş Toplamı</h3>
-            <div className="summary-item.election">
+          <div className="order-summary flex column margin-bottom">
+            <h3 className="padding-s">Sipariş Toplamı</h3>
+            <div className="summary-item-election flex between semi-bold padding-s">
               <span>Seçimler: </span>
               {/* Seçilen malzeleme adedi * 5TL ile ekrana yazar. */}
               <span>{elections.length * 5} TL</span>
             </div>
             <div className="summary-item-total">
-              <span>Toplam: </span>
-              <span>{totalPrice * count + elections.length * 5 * count}</span>
+              <div className="flex between margin-button semi-bold padding-s color-red">
+                <span>Toplam: </span>
+                <span>
+                  {totalPrice * count + elections.length * 5 * count} TL
+                </span>
+              </div>
             </div>
-            <button className="order-button btn" onClick={handleOrderCompleted}>
+            <button
+              className="button semi-bold padding-s"
+              onClick={handleOrderCompleted}
+            >
               SİPARİŞ VER
             </button>
           </div>
