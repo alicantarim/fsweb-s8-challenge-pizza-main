@@ -33,22 +33,31 @@ const extras = [
 
 const price = 85.5;
 
+const errorMessages = {
+  note: "Sipariş notu en az 5 harften oluşabilir!",
+  warning: "En az 4, en fazla 10 adet ekstra malzeme seçebilirsiniz!",
+};
+
 function App() {
   // const [formData, setFormData] = useState(initialData);
   const [count, setCount] = useState(1);
   const [totalPrice, setTotalPrice] = useState(price * count);
   const [elections, setElections] = useState([]);
+  const [errors, setErrors] = useState({ note: false, warning: false });
 
+  // Sipariş adedini arttırır.
   const increment = (event) => {
     event.preventDefault();
     setCount(count + 1);
   };
 
+  // Sipariş adedini azaltır.
   const decrement = (event) => {
     event.preventDefault();
     count > 1 ? setCount(count - 1) : setCount(1);
   };
 
+  // Extra malzemeleri ekler ve çıkarır.
   const addElection = (event) => {
     const { value, checked } = event.target;
 
@@ -61,8 +70,21 @@ function App() {
         prevElections.filter((item) => item !== value)
       );
     }
+
+    const selectedCount = elections.length + (checked ? 1 : -1);
+
+    setErrors((prevErrors) => ({
+      ...prevErrors,
+      warning: selectedCount < 4 || selectedCount > 10,
+    }));
+
+    if (name === "note") {
+      setErrors({ ...errors, note: value.length < 5 });
+    }
   };
 
+  // Sipariş hazır hale geldiğinde, "Sipariş ver" butonunuyla action tetiklenir.
+  // Ekranda "Sipariş Verildi" alert olarak gösterir.
   const handleOrderCompleted = (event) => {
     event.preventDefault();
     alert("Sipariş Verildi");
@@ -115,7 +137,8 @@ function App() {
               </label>
               {pizzaSizes.map((pizzaSize) => (
                 <div className="grid-item" key={pizzaSize.id}>
-                  <label className="flex gap-s font-weight" htmlFor="size">
+                  <label className="flex gap-s font-weight">
+                    {/* htmlFor="size" */}
                     <input
                       key={pizzaSize.id}
                       type="radio"
@@ -129,7 +152,7 @@ function App() {
             </div>
             {/* ORDER SIZE SECTION END */}
 
-            {/* ORDER DOUGH TYPE SECTION START */}
+            {/* ORDER DOUrH TYPE SECTION START */}
             <div className="chooseDoughType flex column">
               <label
                 htmlFor="dough"
@@ -171,12 +194,18 @@ function App() {
                       type="checkbox"
                       onChange={addElection}
                       value={extra.name}
+                      invalid={errors.warning}
                     />
                     {extra.name}
                   </label>
                 </div>
               ))}
             </div>
+            {errors.warning && (
+              <div data-cy="check-error" className="color-red">
+                {errorMessages.warning}
+              </div>
+            )}
           </div>
           {/* EXTRA MATERIALS  CHECKBOX END */}
         </div>
@@ -194,7 +223,13 @@ function App() {
             placeholder="Siparişinize eklemek istediğiniz bir not var mı?"
             cols={5}
             rows={4}
+            invalid={errors.note}
           ></textarea>
+          {errors.note && (
+            <div data-cy="note-error" className="color-red">
+              {errorMessages.note}
+            </div>
+          )}
         </div>
         {/* ADD NOTES END */}
 
